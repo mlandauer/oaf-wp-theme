@@ -1,0 +1,17 @@
+@import "compass/utilities/text/replacement";
+@import "compass/utilities/lists/horizontal-list";
+
+#wrapper {
+  @include container;
+  @include showgrid;
+}
+#header, #access, #container, #primary, #secondary, #footer {
+  @include column($blueprint-grid-columns); }
+
+.skip-link {
+  @include hide-text;
+}
+
+#menu ul {
+  @include horizontal-list;
+}
