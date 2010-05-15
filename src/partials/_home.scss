@@ -3,15 +3,72 @@
 
 #wrapper {
   @include container;
-  @include showgrid;
+  //@include showgrid;
 }
-#header, #access, #container, #primary, #secondary, #footer {
-  @include column($blueprint-grid-columns); }
+#header, #access, #container, #primary, #footer {
+  @include column(24, true);
+}
 
 .skip-link {
-  @include hide-text;
+  display: none;
 }
 
 #menu ul {
-  @include horizontal-list;
+  @include horizontal-list(30px);
+  ul {
+    display: none;
+  }
+}
+
+#dynamiccontent {
+  @include column(24, true);
+  
+  #updates {
+    @include prepend(1);
+    @include column(7);
+  }
+
+  #volunteer {
+    @include column(8);
+  }
+
+  #chatter {
+    @include append(1);
+    @include column(7, true);
+  }
+}
+
+#staticcontent {
+  @include column(24, true);
+  #getinvolved {
+    @include prepend(1);
+    @include column(5);
+  }
+  #donation, #idea {
+    @include column(6);
+  }
+  #data {
+    @include append(1);
+    @include column(5, true);
+  }
+}
+
+#secondary > ul {
+  @include column(24, true);
+  padding-left:0;
+  > li:first-child {
+    @include prepend(1);
+    @include column(5);
+  }
+  > li {
+    @include column(6);
+  }
+  > li:last-child {
+    @include append(1);
+    @include column(5, true);
+  }
+}
+
+#primary {
+  display:none;
 }
