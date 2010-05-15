@@ -1,12 +1,20 @@
 @import "compass/utilities/text/replacement";
 @import "compass/utilities/lists/horizontal-list";
 
+$footer-background-color: #e9e5d7;
+$box-background-color : #fffde7;
+$box-heading-color : #fec210;
+
 #wrapper {
   @include container;
   //@include showgrid;
 }
 #header, #access, #container, #primary, #footer {
-  @include column(24, true);
+  @include column(18, true);
+}
+
+#secondary > ul {
+  background-color: $footer-background-color;
 }
 
 .skip-link {
@@ -21,51 +29,73 @@
 }
 
 #dynamiccontent {
-  @include column(24, true);
+  @include column(18, true);
+  
+  h3 {
+    background-color: $box-heading-color;
+  	margin: 0;
+  	line-height: 1.5em;
+  }
+
+  p, h3, h4 {
+    padding-left: 20px;
+  	padding-right: 20px;
+  }
+
+  // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
+  overflow: hidden;
   
   #updates {
-    @include prepend(1);
-    @include column(7);
+    @include column(6);
+    background-color: $box-background-color;
+    margin-left: $blueprint-grid-width + $blueprint-grid-margin;
+    // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
   }
 
   #volunteer {
-    @include column(8);
+    @include column(6);
+    background-color: $box-background-color;
+    // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
   }
 
   #chatter {
     @include append(1);
-    @include column(7, true);
+    @include column(4, true);
   }
 }
 
 #staticcontent {
-  @include column(24, true);
+  @include column(18, true);
   #getinvolved {
     @include prepend(1);
-    @include column(5);
+    @include column(4);
   }
   #donation, #idea {
-    @include column(6);
+    @include column(4);
   }
   #data {
     @include append(1);
-    @include column(5, true);
+    @include column(4, true);
   }
 }
 
 #secondary > ul {
-  @include column(24, true);
+  @include column(18, true);
   padding-left:0;
   > li:first-child {
     @include prepend(1);
-    @include column(5);
+    @include column(4);
   }
   > li {
-    @include column(6);
+    @include column(4);
   }
   > li:last-child {
     @include append(1);
-    @include column(5, true);
+    @include column(4, true);
   }
 }
 
