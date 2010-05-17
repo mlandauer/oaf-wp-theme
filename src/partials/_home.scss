@@ -121,6 +121,8 @@ body {
   }
   hr {
     @include column(16, true);
+    @include prepend-top(15px);
+    @include append-bottom(15px);
   }
   #dynamiccontent {
     @include column(16, true);
@@ -138,6 +140,9 @@ body {
     @include column(16, true);
     #getinvolved, #donation, #idea, #data {
       @include column(4);
+    }
+    #getinvolved, #donation, #idea {
+      @include border;
     }
     #data {
       @include last;
