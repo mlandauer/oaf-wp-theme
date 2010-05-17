@@ -93,10 +93,6 @@ body {
   background: $footer-background-color url(../images/stripes.png) repeat-x 0 1px;
 }
 
-.skip-link {
-  display: none;
-}
-
 #menu ul {
   @include horizontal-list(20px);
   ul {
@@ -156,6 +152,6 @@ body {
   }
 }
 
-#primary, .entry-title {
+#primary, .entry-title, .skip-link {
   display:none;
 }
