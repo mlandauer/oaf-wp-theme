@@ -101,12 +101,10 @@ body {
   @include equal-column-length("#updates, #volunteer, #chatter");
 
   #updates {
-    @include column(6);
-    background-color: $box-background-color;
     margin-left: $blueprint-grid-width + $blueprint-grid-margin;
   }
 
-  #volunteer {
+  #updates, #volunteer {
     @include column(6);
     background-color: $box-background-color;
   }
@@ -119,32 +117,31 @@ body {
 
 #staticcontent {
   @include column(18, true);
-  #getinvolved {
-    @include prepend(1);
+  #getinvolved, #donation, #idea, #data {
     @include column(4);
   }
-  #donation, #idea {
-    @include column(4);
+  
+  #getinvolved {
+    @include prepend(1);
   }
   #data {
     @include append(1);
-    @include column(4, true);
+    @include last;
   }
 }
 
 #secondary > ul {
   @include column(18, true);
   padding-left:0;
-  > li:first-child {
-    @include prepend(1);
-    @include column(4);
-  }
   > li {
     @include column(4);
   }
+  > li:first-child {
+    @include prepend(1);
+  }
   > li:last-child {
     @include append(1);
-    @include column(4, true);
+    @include last;
   }
 }
 
