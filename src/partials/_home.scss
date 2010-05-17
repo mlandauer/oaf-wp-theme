@@ -19,7 +19,7 @@ $box-heading-color : #fec210;
 // Change the name of the font here to test font-face embedding. By changing the name we can ensure
 // that it's not picking up a locally installed version of the font
 $museo-slab : "ms";
-$quicksand-book: "qsbook";
+$quicksand: "qs";
 
 // **** Start of fonts stuff
 
@@ -27,7 +27,8 @@ $quicksand-book: "qsbook";
 /* Museo Slab 500 - a font by Jos Buivenga (exljbris) -> www.exljbris.nl */
 @include font-face($museo-slab, font-files("Museo_Slab_500.otf", opentype));
 @include font-face($museo-slab, font-files("Museo_Slab_500italic.otf", opentype), false, false, italic);
-@include font-face($quicksand-book, font-files("Quicksand_Book.otf", opentype));
+@include font-face($quicksand, font-files("Quicksand_Book.otf", opentype), false, false, book);
+@include font-face($quicksand, font-files("Quicksand_Bold.otf", opentype), false, false, bold);
 
 body {
   font-family: Arial;
@@ -45,7 +46,8 @@ body {
 }
 
 #menu {
-  font-family: $quicksand-book;
+  font-family: $quicksand;
+  font-style: book;
   font-size: 1.05em;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -53,7 +55,8 @@ body {
 
 #updates, #volunteer, #chatter {
   h3 {
-    font-family: $quicksand-book;
+    font-family: $quicksand;
+    font-style: book;
     font-size: 1.6em;
     letter-spacing: -0.015em;
   }
@@ -64,6 +67,17 @@ body {
     font-family: $museo-slab;
     font-size: 1.45em;
     letter-spacing: 0em;
+  }
+}
+
+#secondary > ul {
+  h3 {
+    font-family: $quicksand;
+    font-style: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: -0.015em;
+    margin-top: 37px;
   }
 }
 
