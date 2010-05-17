@@ -1,9 +1,21 @@
 @import "compass/utilities/text/replacement";
 @import "compass/utilities/lists/horizontal-list";
+@import "compass/css3";
 
 $footer-background-color: #e9e5d7;
 $box-background-color : #fffde7;
 $box-heading-color : #fec210;
+// Change the name of the font here to test font-face embedding. By changing the name we can ensure
+// that it's not picking up a locally installed version of the font
+$museo-slab : "ms";
+
+// TODO: Add .eot for IE
+/* Museo Slab 500 - a font by Jos Buivenga (exljbris) -> www.exljbris.nl */
+@include font-face($museo-slab, font-files("Museo_Slab_500.otf", opentype));
+
+#blog-title {
+  font-family: "ms";
+}
 
 #wrapper {
   @include container;
