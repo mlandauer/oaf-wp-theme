@@ -105,15 +105,23 @@ body {
   @include column(18, true);
 }
 
+// For some reason there's a <p> around the <img> which is causing extra space to appear
+.entry-content > p {
+  margin: 0;
+}
+
 #homecontent {
+  background: url(../images/stripes.png) repeat-x 0 1px;
   @include prepend(1);
   @include append(1);
   @include column(16, true);
 
   #aboutoaf {
+    @include prepend-top(25px);
     @include column(12);
   }
   #viewprojects {
+    @include prepend-top(25px);
     @include column(4, true);
     a {
       @include anchor-button;
