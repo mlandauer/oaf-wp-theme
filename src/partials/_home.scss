@@ -141,6 +141,7 @@ body {
   @include column(18, true);
   padding-left:0;
   > li {
+    @include no-bullets;
     @include column(4);
   }
   > li:first-child {
