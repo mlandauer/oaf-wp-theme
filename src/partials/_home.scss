@@ -1,6 +1,7 @@
 @import "compass/utilities/text/replacement";
 @import "compass/utilities/lists/horizontal-list";
 @import "compass/css3";
+@import "blueprint/buttons";
 
 // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
 // All the columns need a parent container. Put this mixin in the parent container and pass a selector for the columns
@@ -58,6 +59,14 @@ body {
   letter-spacing: 0em;
 }
 
+#viewprojects {
+  font-family: $quicksand;
+  font-style: book;
+  text-transform: uppercase;
+  font-size: 1.05em;
+  letter-spacing: 0em;
+}
+
 #updates, #volunteer, #chatter {
   h3 {
     font-family: $quicksand;
@@ -106,6 +115,9 @@ body {
   }
   #viewprojects {
     @include column(4, true);
+    a {
+      @include anchor-button;
+    }
   }
   hr {
     @include column(16, true);
