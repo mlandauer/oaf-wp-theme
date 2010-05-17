@@ -14,8 +14,6 @@
 }
 
 $footer-background-color: #e9e5d7;
-$box-background-color : #fffde7;
-$box-heading-color : #fec210;
 // Change the name of the font here to test font-face embedding. By changing the name we can ensure
 // that it's not picking up a locally installed version of the font
 $museo-slab : "ms";
@@ -65,19 +63,19 @@ body {
 #getinvolved, #donation, #idea, #data {
   h3 {
     font-family: $museo-slab;
-    font-size: 1.45em;
+    font-size: 1.4em;
     letter-spacing: 0em;
   }
 }
 
 #secondary > ul {
+  padding: 37px;
   h3 {
     font-family: $quicksand;
     font-style: bold;
     text-transform: uppercase;
     font-size: 1em;
     letter-spacing: -0.015em;
-    margin-top: 37px;
   }
 }
 
@@ -100,7 +98,7 @@ body {
 }
 
 #menu ul {
-  @include horizontal-list(30px);
+  @include horizontal-list(20px);
   ul {
     display: none;
   }
@@ -109,31 +107,18 @@ body {
 #dynamiccontent {
   @include column(18, true);
   
-  h3 {
-    background-color: $box-heading-color;
-  	margin: 0;
-  	line-height: 1.5em;
-  }
-
-  p, h3, h4 {
-    padding-left: 20px;
-  	padding-right: 20px;
-  }
-
-  @include equal-column-length("#updates, #volunteer, #chatter");
-
   #updates {
-    margin-left: $blueprint-grid-width + $blueprint-grid-margin;
+    @include prepend(1);
   }
 
-  #updates, #volunteer {
-    @include column(6);
-    background-color: $box-background-color;
+  #updates, #volunteer, #chatter {
+    @include column(5);
   }
 
   #chatter {
+    @include prepend(1);
     @include append(1);
-    @include column(4, true);
+    @include last;
   }
 }
 
@@ -167,6 +152,6 @@ body {
   }
 }
 
-#primary {
+#primary, .entry-title {
   display:none;
 }
