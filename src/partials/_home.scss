@@ -143,6 +143,9 @@ body {
   > li {
     @include no-bullets;
     @include column(4);
+    ul {
+      padding-left: 0;
+    }
   }
   > li:first-child {
     @include prepend(1);
