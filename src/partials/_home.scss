@@ -2,6 +2,17 @@
 @import "compass/utilities/lists/horizontal-list";
 @import "compass/css3";
 
+// Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
+// All the columns need a parent container. Put this mixin in the parent container and pass a selector for the columns
+@mixin equal-column-length($column-selector) {
+  overflow: hidden;
+  #{$column-selector} {
+    // A fairly arbitrary large number (should be larger than any potential column)
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
+  }
+}
+
 $footer-background-color: #e9e5d7;
 $box-background-color : #fffde7;
 $box-heading-color : #fec210;
@@ -87,24 +98,17 @@ body {
   	padding-right: 20px;
   }
 
-  // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
-  overflow: hidden;
-  
+  @include equal-column-length("#updates, #volunteer, #chatter");
+
   #updates {
     @include column(6);
     background-color: $box-background-color;
     margin-left: $blueprint-grid-width + $blueprint-grid-margin;
-    // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
   }
 
   #volunteer {
     @include column(6);
     background-color: $box-background-color;
-    // Stupid trick to get columns the same length: see http://www.positioniseverything.net/articles/onetruelayout/equalheight
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
   }
 
   #chatter {
