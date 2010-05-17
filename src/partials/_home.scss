@@ -10,11 +10,19 @@ $box-heading-color : #fec210;
 $museo-slab : "ms";
 $quicksand-book: "qsbook";
 
+// **** Start of fonts stuff
+
 // TODO: Add .eot for IE
 /* Museo Slab 500 - a font by Jos Buivenga (exljbris) -> www.exljbris.nl */
 @include font-face($museo-slab, font-files("Museo_Slab_500.otf", opentype));
 @include font-face($museo-slab, font-files("Museo_Slab_500italic.otf", opentype), false, false, italic);
 @include font-face($quicksand-book, font-files("Quicksand_Book.otf", opentype));
+
+body {
+  font-family: Arial;
+  font-size: 0.8em;
+  line-height: 1.25;
+}
 
 #blog-title {
   font-family: $museo-slab;
@@ -31,6 +39,16 @@ $quicksand-book: "qsbook";
   text-transform: uppercase;
   letter-spacing: 0.13em;
 }
+
+#updates, #volunteer, #chatter {
+  h3 {
+    font-family: $quicksand-book;
+    font-size: 1.6em;
+    letter-spacing: -0.015em;
+  }
+}
+
+// **** End of fonts stuff
 
 #wrapper {
   @include container;
