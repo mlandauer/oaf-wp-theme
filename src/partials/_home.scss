@@ -51,6 +51,13 @@ body {
   letter-spacing: 0.13em;
 }
 
+#aboutoaf {
+  font-family: $quicksand;
+  font-style: book;
+  font-size: 1.5em;
+  letter-spacing: 0em;
+}
+
 #updates, #volunteer, #chatter {
   h3 {
     font-family: $quicksand;
@@ -89,6 +96,43 @@ body {
   @include column(18, true);
 }
 
+#homecontent {
+  @include prepend(1);
+  @include append(1);
+  @include column(16, true);
+
+  #aboutoaf {
+    @include column(12);
+  }
+  #viewprojects {
+    @include column(4, true);
+  }
+  hr {
+    @include column(16, true);
+  }
+  #dynamiccontent {
+    @include column(16, true);
+
+    #updates, #volunteer, #chatter {
+      @include column(5);
+    }
+
+    #chatter {
+      @include prepend(1);
+      @include last;
+    }
+  }
+  #staticcontent {
+    @include column(16, true);
+    #getinvolved, #donation, #idea, #data {
+      @include column(4);
+    }
+    #data {
+      @include last;
+    }
+  }
+}
+
 #secondary > ul {
   background: $footer-background-color url(../images/stripes.png) repeat-x 0 1px;
 }
@@ -97,39 +141,6 @@ body {
   @include horizontal-list(20px);
   ul {
     display: none;
-  }
-}
-
-#dynamiccontent {
-  @include column(18, true);
-  
-  #updates {
-    @include prepend(1);
-  }
-
-  #updates, #volunteer, #chatter {
-    @include column(5);
-  }
-
-  #chatter {
-    @include prepend(1);
-    @include append(1);
-    @include last;
-  }
-}
-
-#staticcontent {
-  @include column(18, true);
-  #getinvolved, #donation, #idea, #data {
-    @include column(4);
-  }
-  
-  #getinvolved {
-    @include prepend(1);
-  }
-  #data {
-    @include append(1);
-    @include last;
   }
 }
 
@@ -152,6 +163,6 @@ body {
   }
 }
 
-#primary, .entry-title, .skip-link {
+#primary, .entry-title, .skip-link, .edit-link {
   display:none;
 }
