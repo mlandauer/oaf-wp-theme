@@ -44,7 +44,7 @@ body {
   font-style: italic;
 }
 
-#menu, #aboutoaf, #viewprojects, #updates h3, #volunteer h3, #chatter h3 {
+#menu, #aboutoaf, #viewprojects, #updates h3, #volunteer h3, #chatter h3, .sidebar#primary {
   font-family: $quicksand;
   font-style: book;
 }
@@ -94,6 +94,15 @@ body {
 
 #menu, #viewprojects, #secondary > ul h3 {
   text-transform: uppercase;
+}
+
+.widget#sub-page-menu h3, .widget#sub-page-menu li {
+  font-size: 1.2em;
+  letter-spacing: -0.015em;
+}
+
+.widget#sub-page-menu li {
+  line-height: 2.14em;
 }
 
 // **** End of fonts stuff
@@ -200,12 +209,15 @@ body {
 
 // Formatting of "About Us" page
 #container {
+  @include prepend-top(4em);
   @include prepend(4);
   @include column(13, true);
   @include append(1);
+  @include append-bottom(4em);
 }
 
 #primary {
+  @include prepend-top(4em);
   @include column(3);
   @include pull(17, true);
   ul {
@@ -220,8 +232,10 @@ body.home {
     display:none;
   }
   #container {
+    @include prepend-top(0);
     @include prepend(0);
     @include column(18, true);
     @include append(0);
+    @include append-bottom(0);
   }
 }
