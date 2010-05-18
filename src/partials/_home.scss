@@ -35,67 +35,72 @@ body {
   line-height: 1.25;
 }
 
-#blog-title {
+#blog-title, #getinvolved h3, #donation h3, #idea h3, #data h3 {
   font-family: $museo-slab;
+}
+
+#blog-description {
+  font-family: $museo-slab;
+  font-style: italic;
+}
+
+#menu, #aboutoaf, #viewprojects, #updates h3, #volunteer h3, #chatter h3 {
+  font-family: $quicksand;
+  font-style: book;
+}
+
+#secondary > ul h3 {
+  font-family: $quicksand;
+  font-style: bold;
+}
+
+#blog-title {
   font-size: 2.75em;
 }
 
 #blog-description {
-  font: italic 1.05em $museo-slab;
+  font-size: 1.05em;
 }
 
 #menu {
-  font-family: $quicksand;
-  font-style: book;
   font-size: 1.05em;
-  text-transform: uppercase;
   letter-spacing: 0.13em;
 }
 
 #aboutoaf {
-  font-family: $quicksand;
-  font-style: book;
   font-size: 1.5em;
   letter-spacing: 0em;
 }
 
 #viewprojects {
-  font-family: $quicksand;
-  font-style: book;
-  text-transform: uppercase;
   font-size: 1.05em;
   letter-spacing: 0em;
 }
 
-#updates, #volunteer, #chatter {
-  h3 {
-    font-family: $quicksand;
-    font-style: book;
-    font-size: 1.6em;
-    letter-spacing: -0.015em;
-  }
+#updates h3, #volunteer h3, #chatter h3 {
+  font-size: 1.6em;
+  letter-spacing: -0.015em;
 }
 
-#getinvolved, #donation, #idea, #data {
-  h3 {
-    font-family: $museo-slab;
-    font-size: 1.4em;
-    letter-spacing: 0em;
-  }
+#getinvolved h3, #donation h3, #idea h3, #data h3 {
+  font-size: 1.4em;
+  letter-spacing: 0em;
 }
 
-#secondary > ul {
-  padding: 37px;
-  h3 {
-    font-family: $quicksand;
-    font-style: bold;
-    text-transform: uppercase;
-    font-size: 1em;
-    letter-spacing: -0.015em;
-  }
+#secondary > ul h3 {
+  font-size: 1em;
+  letter-spacing: -0.015em;
+}
+
+#menu, #viewprojects, #secondary > ul h3 {
+  text-transform: uppercase;
 }
 
 // **** End of fonts stuff
+
+#secondary > ul {
+  padding: 37px;
+}
 
 #wrapper {
   @include container;
