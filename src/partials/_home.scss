@@ -49,9 +49,14 @@ body {
   font-style: book;
 }
 
-#secondary > ul h3 {
+#secondary > ul h3, .entry-title {
   font-family: $quicksand;
   font-style: bold;
+}
+
+.entry-title {
+  font-size: 2em;
+  letter-spacing: -0.015em;
 }
 
 #blog-title {
@@ -202,8 +207,7 @@ body {
   }
 }
 
-
-.entry-title, .skip-link, .edit-link {
+.skip-link, .edit-link {
   display:none;
 }
 
@@ -228,9 +232,10 @@ body {
 
 // Things that only apply to the home page
 body.home {
-  #primary {
+  #primary, .entry-title {
     display:none;
   }
+  
   #container {
     @include prepend-top(0);
     @include prepend(0);
