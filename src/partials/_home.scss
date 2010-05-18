@@ -101,7 +101,7 @@ body {
   @include container;
   //@include showgrid;
 }
-#header, #access, #container, #primary, #footer {
+#header, #access, #footer {
   @include column(18, true);
 }
 
@@ -188,6 +188,35 @@ body {
   }
 }
 
-#primary, .entry-title, .skip-link, .edit-link {
+
+.entry-title, .skip-link, .edit-link {
   display:none;
+}
+
+// Formatting of "About Us" page
+#container {
+  @include prepend(4);
+  @include column(13, true);
+  @include append(1);
+}
+
+#primary {
+  @include column(3);
+  @include pull(17, true);
+  ul {
+    @include no-bullets;
+    padding-left: 0;
+  }
+}
+
+// Things that only apply to the home page
+body.home {
+  #primary {
+    display:none;
+  }
+  #container {
+    @include prepend(0);
+    @include column(18, true);
+    @include append(0);
+  }
 }
