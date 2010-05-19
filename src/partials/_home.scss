@@ -120,7 +120,7 @@ body {
   @include container;
   //@include showgrid;
 }
-#header, #access, #footer {
+#access, #footer {
   @include column(18, true);
 }
 
@@ -207,7 +207,7 @@ body {
   }
 }
 
-.skip-link, .edit-link {
+.skip-link, .edit-link, #search label {
   display:none;
 }
 
@@ -220,14 +220,16 @@ body {
   @include append-bottom(4em);
 }
 
+// Turn off bullets in all sidebars
+.sidebar ul {
+  @include no-bullets;
+  padding-left: 0;
+}
+
 #primary {
   @include prepend-top(4em);
   @include column(3);
   @include pull(17, true);
-  ul {
-    @include no-bullets;
-    padding-left: 0;
-  }
 }
 
 // Things that only apply to the home page
@@ -242,5 +244,16 @@ body.home {
     @include column(18, true);
     @include append(0);
     @include append-bottom(0);
+  }
+}
+
+#header {
+  @include column(13);
+}
+
+#header-widget-area {
+  @include column(5, true);
+  form {
+    @include float-right;
   }
 }
